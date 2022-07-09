@@ -64,16 +64,8 @@ using namespace std;
 #define           AA    cout << "Alice"
 #define           BB    cout << "Bob"
 
-
-void __print(int x) {cerr << x;}
-void __print(long x) {cerr << x;}
-void __print(long long x) {cerr << x;}
-void __print(unsigned x) {cerr << x;}
-void __print(unsigned long x) {cerr << x;}
-void __print(unsigned long long x) {cerr << x;}
-void __print(float x) {cerr << x;}
-void __print(double x) {cerr << x;}
-void __print(long double x) {cerr << x;}
+template<typename T>
+void __print(T &x) { cerr << x; }
 void __print(char x) {cerr << '\'' << x << '\'';}
 void __print(const char *x) {cerr << '\"' << x << '\"';}
 void __print(const string &x) {cerr << '\"' << x << '\"';}
@@ -86,8 +78,11 @@ void __print(const T &x) {int f = 0; cerr << '{'; for (auto &i: x) cerr << (f++ 
 void _print() {cerr << "]\n";}
 template <typename T, typename... V>
 void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v...);}
+#ifdef LMQZZZ
 #define deb(x...) cerr << "[ " <<__func__<< " : " <<__LINE__<< " ]" << " : " << "[" << #x << "] = ["; _print(x); cerr << endl;
-
+#else
+#define deb(x...)
+#endif
 template <class... T> inline void read(T&... args) { (( cin >> args ), ... ) ; }
 template <class T> inline T min(const T &a, const T &b, const T &c) { return min(a, min(b, c)); }
 template <class T> inline T max(const T &a, const T &b, const T &c) { return max(a, max(b, c)); }
@@ -125,11 +120,10 @@ constexpr        int DELTA  =  2e5 + 1;
 constexpr     int16_t dr[]  =  {0, 0, 1, -1};
 constexpr     int16_t dc[]  =  {-1, 1, 0, 0};
 constexpr      int64_t MOD  =  1e9 + 7 ;
-constexpr     int32_t MAXN  =  1e6 + 10;
+constexpr     int32_t MAXN  =  x + 10;
 
 
 constexpr   bool MULTITEST  =  0;
-
 
 void solve(){
 
