@@ -86,9 +86,9 @@ void _print() {cerr << "]\n";}
 template <typename T, typename... V>
 void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v...);}
 #ifdef LMQZZZ
-#define dbg(x...) cerr << "\e[91m"<<__func__<<":"<<__LINE__<<" [" << #x << "] = ["; _print(x); cerr << "\e[39m" << endl;
+#define deb(x...) cerr << "\e[91m"<<__func__<<":"<<__LINE__<<" [" << #x << "] = ["; _print(x); cerr << "\e[39m" << endl;
 #else
-#define dbg(x...)
+#define deb(x...)
 #endif
 
 template <class... T> inline void read(T&... args) { (( cin >> args ), ... ) ; }
