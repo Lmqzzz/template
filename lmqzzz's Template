@@ -44,10 +44,6 @@ using namespace std;
 #define     mem(f,x)    memset(f , x , sizeof(f))
 #define        sz(x)    (int32_t)(x).size()
 #define  __lcm(a, b)    ((1ll * a * b) / __gcd(a, b))
-#define   rep(i,a,b)    for(int i = a ; i <= (int32_t)(b) ; i++)
-#define  repp(i,a,b)    for(int i = a ; i < (int32_t)(b) ; i++)
-#define   per(i,a,b)    for(int i = a ; i >= (int32_t)(b) ; i--)
-#define  perr(i,a,b)    for(int i = a ; i > (int32_t)(b) ; i--)
 #define          mxx    *max_element
 #define          mnn    *min_element
 #define         left    Kurumi_Tokisaki
