@@ -1,0 +1,62 @@
+
+int up[MAXN][18], mxup[MAXN][18];
+int tin[MAXN], tout[MAXN], timer;
+int l;
+
+void dfs(int u, int p, int w) {
+    tin[u] = ++ timer;
+    up[u][0] = p;
+    mxup[u][0] = w;
+    for (int i = 1; i <= l; i ++) {
+        up[u][i] = up[up[u][i - 1]][i - 1];
+        mxup[u][i] = max(mxup[u][i - 1], mxup[up[u][i - 1]][i - 1]);
+    }
+    for (auto [v, c] : adj[u]) {
+        if (v == p) {
+            continue;
+        } else {
+            dfs(v, u, c);
+        }
+    }
+    tout[u] = ++ timer;
+}
+
+bool isanc(int u, int v) {
+    return ((tin[u] <= tin[v]) && (tout[u] >= tout[v]));
+}
+
+int maximumWeightOnPath(int u, int v) {
+    int lca;
+    if (isanc(u, v)) {
+        lca = u;
+    } else if (isanc(v, u)) {
+        lca = v;
+    } else {
+        int tmpu = u;
+        for (int i = l; i >= 0; i --) {
+            if (!isanc(up[u][i], v)) {
+                u = up[u][i];
+            }
+        }
+        lca = up[u][0];
+        u = tmpu;
+    }
+    int res = 0;
+    for (int i = l; i >= 0; i --) {
+        if (!isanc(up[u][i], lca)) {
+            res = max(res, mxup[u][i]);
+            u = up[u][i];
+        }
+        if (!isanc(up[v][i], lca)) {
+            res = max(res, mxup[v][i]);
+            v = up[v][i];
+        }
+    }
+    if (u != lca) {
+        res = max(res, mxup[u][0]);
+    }
+    if (v != lca) {
+        res = max(res, mxup[v][0]);
+    }
+    return res;
+}
