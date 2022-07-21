@@ -1,17 +1,15 @@
 
 int pm[(int)1e7 + 10];
-vi prime;
+vector<int> prime;
 
-void eratothenes(int N)
-{
-    for(int i = 2 ; i <= N ; i++)
-    {
-        if(pm[i] == 0)
-        {
+void eratothenes(int N) {
+    for (int i = 2 ; i <= N ; i ++) {
+        if (pm[i] == 0) {
             pm[i] = i;
             prime.eb(i);
         }
-        for(int j = 0 ; j < sz(prime) && prime[j] <= pm[i] && i * prime[j] <= N ; j++)
+        for (int j = 0 ; (j < sz(prime)) && (prime[j] <= pm[i]) && (i * prime[j] <= N) ; j ++) {
             pm[i * prime[j]] = prime[j];
+        }
     }
 }
