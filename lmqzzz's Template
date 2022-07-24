@@ -49,7 +49,7 @@ using namespace std;
 #define         left    Kurumi_Tokisaki
 #define        right    Kei_Karuizawa
 #define         next    Mai_Sakurajima
-#define          div    Shikimori_Micchon
+#define          div    Yume_Irido
 #define         prev    Chizuru_Mizuhara
 #define    cntbit(x)    __builtin_popcountll(x)
 #define      MASK(x)    ( 1ll << (x) )
@@ -90,8 +90,8 @@ void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v..
 template <class... T> inline void read(T&... args) { (( cin >> args ), ... ) ; }
 template <class T> inline T min(const T &a, const T &b, const T &c) { return min(a, min(b, c)); }
 template <class T> inline T max(const T &a, const T &b, const T &c) { return max(a, max(b, c)); }
-template <class T, class U> inline bool mini(T &a, const U &b) { if(a > b) { a = b; return 1; } return 0; }
-template <class T, class U> inline bool maxi(T &a, const U &b) { if(a < b) { a = b; return 1; } return 0; }
+template <class T, class U> inline bool mini(T &a, const U &b) { if (a > b) { a = b; return 1; } return 0; }
+template <class T, class U> inline bool maxi(T &a, const U &b) { if (a < b) { a = b; return 1; } return 0; }
 
 typedef           long double    ld;
 typedef             long long    ll;
@@ -129,7 +129,7 @@ constexpr     int32_t MAXN  =  x + 10;
 
 constexpr   bool MULTITEST  =  0;
 
-void solve(){
+void solve() {
 
 }
 
@@ -149,8 +149,7 @@ void gentest() {
 }
 int32_t main() {
     ios_base::sync_with_stdio(0);
-    cin.tie(0);
-    cout.tie(0);
+    cin.tie(0);      cout.tie(0);
     if (fopen(TASK ".inp", "r")) {
         freopen(TASK ".inp", "r", stdin);
         freopen(TASK ".out", "w", stdout);
@@ -160,7 +159,7 @@ int32_t main() {
     init();
     int32_t TT = 1;
     if ( MULTITEST ) cin >> TT;
-    for(int32_t TTT = 1 ; TTT <= TT ; TTT++) {
+    for(int32_t TTT = 1; TTT <= TT; TTT ++) {
         solve();
         cout << '\n';
     }
