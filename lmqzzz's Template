@@ -97,8 +97,9 @@ constexpr     int16_t dc[]  =  {};
 constexpr      int64_t MOD  =  1e9 + 7 ;
 constexpr     int32_t MAXN  =  x + 10;
 
-
 constexpr   bool MULTITEST  =  0;
+
+
 
 void solve() {
 
