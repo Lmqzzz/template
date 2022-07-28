@@ -1,33 +1,3 @@
-/********************************************************************************************************************
-*                                                                                                                   *
-*   lmqzzz : ILS 21 - 24                                                                                            *
-*                                                                                                                   *
-*                                                                                                                   *
-*       lllllll                                                                                                     *
-*       l:::::l                                                                                                     *
-*       l:::::l                                                                                                     *
-*       l:::::l                                                                                                     *
-*        l::::l    mmmmmmm    mmmmmmm      qqqqqqqqq   qqqqqzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz    *
-*        l::::l  mm:::::::m  m:::::::mm   q:::::::::qqq::::qz:::::::::::::::zz:::::::::::::::zz:::::::::::::::z     *
-*        l::::l m::::::::::mm::::::::::m q:::::::::::::::::qz::::::::::::::z z::::::::::::::z z::::::::::::::z      *
-*        l::::l m::::::::::::::::::::::mq::::::qqqqq::::::qqzzzzzzzz::::::z  zzzzzzzz::::::z  zzzzzzzz::::::z       *
-*        l::::l m:::::mmm::::::mmm:::::mq:::::q     q:::::q       z::::::z         z::::::z         z::::::z        *
-*        l::::l m::::m   m::::m   m::::mq:::::q     q:::::q      z::::::z         z::::::z         z::::::z         *
-*        l::::l m::::m   m::::m   m::::mq:::::q     q:::::q     z::::::z         z::::::z         z::::::z          *
-*        l::::l m::::m   m::::m   m::::mq::::::q    q:::::q    z::::::z         z::::::z         z::::::z           *
-*       l::::::lm::::m   m::::m   m::::mq:::::::qqqqq:::::q   z::::::zzzzzzzz  z::::::zzzzzzzz  z::::::zzzzzzzz     *
-*       l::::::lm::::m   m::::m   m::::m q::::::::::::::::q  z::::::::::::::z z::::::::::::::z z::::::::::::::z     *
-*       l::::::lm::::m   m::::m   m::::m  qq::::::::::::::q z:::::::::::::::zz:::::::::::::::zz:::::::::::::::z     *
-*       llllllllmmmmmm   mmmmmm   mmmmmm    qqqqqqqq::::::qzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz     *
-*                                                   q:::::q                                                         *
-*                                                   q:::::q                                                         *
-*                                                  q:::::::q                                                        *
-*                                                  q:::::::q                                                        *
-*                                                  q:::::::q                                                        *
-*                                                  qqqqqqqqq                                                        *
-*                                                                                                                   *
-********************************************************************************************************************/
-
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -115,24 +85,24 @@ void init() {
 ///------------------------------
 
 void gentest() {
-    if (fopen(TASK ".inp", "r"))
-        freopen(TASK ".inp","w",stdout);
-    srand(time(0));
+        if (fopen(TASK ".inp", "r"))
+                freopen(TASK ".inp","w",stdout);
+        srand(time(0));
 }
 int32_t main() {
-    ios_base::sync_with_stdio(0);
-    cin.tie(0);      cout.tie(0);
-    if (fopen(TASK ".inp", "r")) {
-        freopen(TASK ".inp", "r", stdin);
-        freopen(TASK ".out", "w", stdout);
-    }
-//    gentest();
-//    return 0;
-    init();
-    int32_t TT = 1;
-    if ( MULTITEST ) cin >> TT;
-    for(int32_t TTT = 1; TTT <= TT; TTT ++) {
-        solve();
-        cout << '\n';
-    }
+        ios_base::sync_with_stdio(0);
+        cin.tie(0);      cout.tie(0);
+        if (fopen(TASK ".inp", "r")) {
+                freopen(TASK ".inp", "r", stdin);
+                freopen(TASK ".out", "w", stdout);
+        }
+        gentest();
+        return 0;
+        init();
+        int32_t TT = 1;
+        if ( MULTITEST ) cin >> TT;
+        for(int32_t TTT = 1; TTT <= TT; TTT ++) {
+                solve();
+                cout << '\n';
+        }
 }
