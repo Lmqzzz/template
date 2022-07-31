@@ -2,7 +2,7 @@
 int invs[(int)1e6 + 12] , fact[(int)1e6 + 12];
 
 int Power(int A, int B) {
-    ll res = 1;
+    int64_t res = 1;
     for (; B ; B >>= 1, A = (1ll * A * A) % MOD) {
         if (B & 1) {
             (res *= A) %= MOD;
