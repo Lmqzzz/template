@@ -88,6 +88,7 @@ void gentest() {
         if (fopen(TASK ".inp", "r"))
                 freopen(TASK ".inp","w",stdout);
         srand(time(0));
+        exit(0);
 }
 int32_t main() {
         ios_base::sync_with_stdio(0);
@@ -96,8 +97,7 @@ int32_t main() {
                 freopen(TASK ".inp", "r", stdin);
                 freopen(TASK ".out", "w", stdout);
         }
-        gentest();
-        return 0;
+        // gentest();
         init();
         int32_t TT = 1;
         if ( MULTITEST ) cin >> TT;
