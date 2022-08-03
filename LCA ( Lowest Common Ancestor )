@@ -1,6 +1,6 @@
 
 int euler[MAXN * 4];
-int l[MAXN][20];
+int l[MAXN * 4][20];
 int d[MAXN];
 int pos[MAXN];
 int par[MAXN];
